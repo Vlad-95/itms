@@ -1,0 +1,45 @@
+.header {
+    padding: 16px 0 27px;
+    border-bottom: 1px solid #4c5761;
+
+    &__wrap {
+        display: flex;      
+        //align-items: center;  
+        position: relative;
+    }
+
+    .logo {
+        margin-right: 74px;
+
+        p {
+            font-weight: 500;
+            font-size: 40px;
+            margin: 0;
+
+            &.sub {
+                font-size: 15px;
+                letter-spacing: 6.5px;
+                text-align: center;
+            }
+        }
+
+        .green {
+            color: @green;
+        }
+
+        .violet {
+            color: @violet;
+        }
+    }
+
+    &__feedback {
+        margin: 10px 0 0 auto;
+        background-color: @green;
+        color: @bg;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 100px;
+        align-self: flex-start;
+    }
+
+}
