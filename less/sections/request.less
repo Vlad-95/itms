@@ -56,3 +56,37 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .request {
+        &__item {
+            display: block;
+            padding: 15px 0;
+            position: relative;
+
+            &:first-of-type {
+                padding-top: 15px;
+            }
+
+            .icon {
+                position: absolute;
+                left: 0;
+                top: 20px;
+            }
+
+            .id {
+                margin: 10px 0 0 30px;
+            }
+
+            .text {
+                margin: 10px 0 0;
+                padding-right: 0;
+            }
+
+            .more {
+                margin: 10px 0 0 0;
+                display: inline-block;
+            }
+        }
+    }
+}
