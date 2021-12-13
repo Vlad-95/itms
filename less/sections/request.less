@@ -1,0 +1,58 @@
+.request {
+    padding: 22px 0 55px;
+    border-bottom: 1px solid #4c5761;
+    
+    &__list {
+        margin: 28px 0 0;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        padding: 7px 0;
+
+        &:first-of-type {
+            padding-top: 0;
+        }
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+
+        &:not(:last-of-type) {
+            border-bottom: 1px dashed fade(@white, 30%);
+        }
+
+        .icon {
+            fill: @violet;
+            height: 26px;
+            width: 24px;
+            min-width: 24px;
+        }
+
+        .id {
+            color: @violet;
+            font-size: 15px;
+            font-weight: 700;
+            margin: 4px 0 0 12px;
+        }
+
+        .text {
+            font-size: 15px;
+            color: @white;
+            margin: 4px 0 0 17px;
+            padding-right: 20px;
+        }
+
+        .more {
+            color: @white;
+            background-color: @green;
+            font-size: 12px;
+            font-weight: 300;
+            border-radius: 100px;
+            margin-left: auto;
+            margin-top: 2px;
+            padding: 4px 8px;
+        }
+    }
+}
