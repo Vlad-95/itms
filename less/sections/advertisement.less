@@ -62,3 +62,41 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .advertisement {
+        &__item {
+            display: block;
+            position: relative;
+            padding: 15px 0;
+            
+            &:first-of-type {
+                padding-top: 15px;
+            }
+
+            .icon {
+                position: absolute;
+                left: 0;
+                top: 20px;
+            }
+
+            .date {
+                margin: 10px 0 0 30px;
+            }
+
+            .company {
+                margin: 10px 0 0;
+            }
+
+            .text {
+                margin: 10px 0 0;
+                padding-right: 0;
+            }
+
+            .more {
+                margin: 10px 0 0 0;
+                display: inline-block;
+            }
+        }
+    }
+}
