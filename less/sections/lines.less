@@ -1,0 +1,44 @@
+.lines {
+    padding: 13px 0 19px;
+    border-bottom: 1px solid #4c5761;
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 22px;
+        margin: 0 -10px;
+    }
+
+    &__item {
+        width: calc(25% - 20px);
+        background-image: url(../img/lines-bg.png);
+        background-size: cover;
+        background-position: center;
+        background-color: @bg;
+        border: 1px solid #495159;   
+        margin: 0 10px 20px;
+        font-size: 17px;
+        font-weight: 500;
+        position: relative;
+        height: 50px;
+        padding: 15px 60px 15px 15px;
+
+        .logo {
+            background-color: @white;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+        }
+
+        &.active {
+            background: none;
+            background-color: #9095f8;
+            border: 1px solid #9095f8;
+        }
+    }
+}

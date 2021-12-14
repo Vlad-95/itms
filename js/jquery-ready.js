@@ -13,48 +13,32 @@ $(document).ready(function() {
 
     burger.click(showMenu);
 
-    //Якорные ссылки
-    function anchorLinks () {
-        let currentLink = $(this).attr('data-anchor');
-        let currentDiv = $('[data-anchor="'+ currentLink +'"]:not(a)');        
-
-        //скролл до элемента
-        $('html, body').animate({scrollTop: currentDiv.offset().top}, 500);
-
-        if ($(window).width() <= 992) {
-            let mobileMenu = $('.mobile-menu');
-
-            burger.removeClass('active');
-            body.removeClass('no-scroll');
-            mobileMenu.removeClass('active');
-        }
-    }
-
-    $('a[data-anchor]').click(anchorLinks);
-
+    
     //одинаковая высота блоков
-    if ($('.transition').length) {
-        $('.transition .items__item').matchHeight({
-            byRow: false,
+    // if ($('.transition').length) {
+    //     $('.transition .items__item').matchHeight({
+    //         byRow: false,
+    //     })
+    // }
+
+    
+    if($('.intro .slider').length) {
+        $('.intro .slider').slick({
+            arrows: false,
+            dots: true,
+            appendDots: $('.slider-bottom .navigation__dots')
+        });
+
+        $('.slider-bottom .navigation__arrow.prev').on('click', function () {
+            $('.intro .slider').slick('slickPrev');
+        });
+
+        $('.slider-bottom .navigation__arrow.next').on('click', function () {
+            $('.intro .slider').slick('slickNext');
         })
     }
 
-    //переключение табов
-    if ($('.connection').length) {
-        let tabs = $('.connection .tabs');
-        let content = $('.connection .content');
-        tabs.on('click', 'div:not(.active)', function() {
-           console.log($(this).index())
-           $(this).addClass('active').siblings().removeClass('active');
-           content.find('.content__item').hide().eq($(this).index()).fadeIn();
-        })
-    }
-
-    //Подмена текста на кнопке
-    if ($(window).width() <= 576) {
-        $('.about .btn').text('Получить гайд на КЭДО')
-    }
-
+    
     //Маска телефона
     $('input[name="tel"]').mask('+7 (999) 999-99-99')
 });
