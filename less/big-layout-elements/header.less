@@ -34,11 +34,11 @@
     .info {
         display: flex;
         margin-left: 50px;
-        margin-top: 20px;
+        margin-top: 17px;
 
         &__item {
             border-left: 2px dotted fade(@white, 20%);
-            padding: 0 23px;
+            padding: 5px 23px 0;
 
             p {
                 font-size: 12px;
@@ -124,6 +124,48 @@
     .header {
         .logo {
             margin-right: 40px;
+
+            p {
+                font-size: 35px;
+
+                &:nth-of-type(2) {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .info {
+            margin-left: 0;
+            margin-top: 10px;
+
+            &__item {
+                padding: 5px 10px 0;
+
+                p {
+                    font-size: 10px;
+
+                    &:nth-of-type(2) {
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+
+        .icons {
+            margin-top: 5px;
+
+            &__item {
+                margin-left: 10px;
+
+                .icon {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                span {
+                    font-size: 10px;
+                }
+            }
         }
     }
 }
@@ -132,6 +174,10 @@
     .header {
         .logo {
             margin-right: 0;
+        }
+
+        .info {
+            display: none;
         }
 
         .burger {
@@ -150,6 +196,16 @@
                     font-size: 12px;
                     letter-spacing: 4.6px;
                 }
+            }
+        }
+
+        .icons {
+            display: none;
+        }
+
+        &_login {
+            .burger {
+                margin-left: auto;
             }
         }
     }   
