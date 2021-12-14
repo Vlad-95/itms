@@ -1,0 +1,33 @@
+.breadcrumbs {
+    display: flex;
+    padding: 33px 0 0;
+    margin: 0;
+    list-style: none;
+    
+    &__item {
+        font-size: 13px;
+
+        &:not(:last-of-type) {
+            position: relative;
+            padding-right: 30px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                right: 7px;
+                top: 7px;
+                width: 16px;
+                height: 1px;
+                background-color: fade(@white, 30%);
+            }
+        }
+
+        a {
+            color: fade(@white, 30%);
+        }
+
+        span {
+            color: @green;
+        }
+    }
+}

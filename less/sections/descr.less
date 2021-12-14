@@ -1,0 +1,99 @@
+.descr {
+    background-color: #454e55;
+    padding: 70px 0 56px;
+    border-bottom: 1px solid #556069;
+
+    .wysiwyg {
+        max-width: 980px;
+
+        & > *:first-child {
+            margin-top: 0;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 17px;
+            margin: 50px 0 18px;
+        }
+
+        ul,
+        ol {
+            font-size: 17px;
+            padding: 0;
+            list-style: none;
+            margin: 18px 0;
+        }
+
+        ul {
+            li {
+                position: relative;
+                line-height: 1.9;
+                padding-left: 30px;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 7px;
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 13px;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 100px;
+                    background-color: @green;
+                }
+            }
+        }
+
+        ol {
+            counter-reset: item;
+
+            li {
+                position: relative;
+                line-height: 1.9;
+                padding-left: 30px;
+                counter-increment: item;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 7px;
+                }
+
+                &:before {
+                    content: counter(item)'.';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: @green;
+                }
+            }
+        }
+    }
+
+    .toggle {
+        font-size: 15px;
+        font-weight: 700;
+        border: 1px dashed fade(@white, 30%);
+        background-color: #3b444c;
+        border-radius: 100px;
+        padding: 5px 48px 5px 19px;
+        margin: 40px 0 0;
+        display: inline-block;
+        position: relative;
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: @white;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            transform: rotate(180deg);
+        }
+    }
+}
