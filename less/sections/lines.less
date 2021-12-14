@@ -5,8 +5,7 @@
     &__wrap {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 22px;
-        margin: 0 -10px;
+        margin: 22px -10px 0;
     }
 
     &__item {
@@ -39,6 +38,37 @@
             background: none;
             background-color: #9095f8;
             border: 1px solid #9095f8;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .lines {
+        &__item {
+            width: calc((100% / 3) - 20px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lines {
+        &__item {
+            width: calc(50% - 20px);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .lines {
+
+        &__wrap {
+            flex-direction: column;
+            margin: 22px 0 0;
+        }
+
+        &__item {
+            width: 100%;
+            margin: 0 0 20px;
         }
     }
 }
