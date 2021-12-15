@@ -5,6 +5,7 @@
     <title>ITMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
     <header class="header header_login">
@@ -364,8 +365,463 @@
         
         <div class="map">
             <div class="wrapper">
-                <div class="map__wrap">
-                    
+                <div class="map__item">
+                    <div class="info">
+                        <div class="info__item address">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-mark"></use>
+                                </svg>
+                            </div>
+                            
+                            <p>Эстония, Таллин, Kesk-Sojamae 2</p>
+                        </div>
+                        <div class="info__item manager">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-user"></use>
+                                </svg>
+                            </div>
+                            
+                            <p>Константинов Константин Константинович</p>
+                            <p class="prof">Менеджер по связям, перевозкам, внешним контактам и всему такому</p>
+
+                            <div class="socials">
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#viber"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#skype"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="info__item phone">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-phone"></use>
+                                </svg>
+                            </div>
+                            
+                            <a href="javascript:;">+372 640 4014</a>
+                        </div>
+
+                        <div class="info__item mail">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-mail"></use>
+                                </svg>
+                            </div>
+                            
+                            <a href="javascript:;">info@dkl.ee</a>
+                        </div>
+
+                    </div>
+
+                    <div class="content">
+                        <!-- <div class="row">
+                            <div class="row__item address">Эстония, Таллин, Kesk-Sojamae 2</div>
+                            <div class="row__item phone"><a href="javascript:;">+372 640 4014</a></div>
+                            <div class="row__item mail"><a href="javascript:;">info@dkl.ee</a></div>
+                        </div> -->
+                        <div class="map" id="map"></div>
+                    </div>
+                </div>
+
+                <div class="map__item">
+                    <div class="info">
+                        <div class="info__item address">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-mark"></use>
+                                </svg>
+                            </div>
+                            
+                            <p>Эстония, Таллин, Kesk-Sojamae 2</p>
+                        </div>
+                        <!-- <div class="info__item manager">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-user"></use>
+                                </svg>
+                            </div>
+                            
+                            <p>Константинов Константин Константинович</p>
+                            <p class="prof">Менеджер по связям, перевозкам, внешним контактам и всему такому</p>
+
+                            <div class="socials">
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#viber"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#skype"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="info__item phone">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-phone"></use>
+                                </svg>
+                            </div>
+                            
+                            <a href="javascript:;">+372 640 4014</a>
+                        </div>
+
+                        <div class="info__item mail">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-mail"></use>
+                                </svg>
+                            </div>
+                            
+                            <a href="javascript:;">info@dkl.ee</a>
+                        </div> -->
+
+                    </div>
+
+                    <div class="content">
+                        <div class="row">
+                            <div class="row__item address">Эстония, Таллин, Kesk-Sojamae 2</div>
+                            <div class="row__item phone"><a href="javascript:;">+372 640 4014</a></div>
+                            <div class="row__item mail"><a href="javascript:;">info@dkl.ee</a></div>
+                        </div>
+                        <!-- <div class="map"></div> -->
+                    </div>
+                </div>
+
+                <div class="map__item">
+                    <div class="info">
+                        <div class="info__item address">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-mark"></use>
+                                </svg>
+                            </div>
+                            
+                            <p>Эстония, Таллин, Kesk-Sojamae 2</p>
+                        </div>
+                        <!-- <div class="info__item manager">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-user"></use>
+                                </svg>
+                            </div>
+                            
+                            <p>Константинов Константин Константинович</p>
+                            <p class="prof">Менеджер по связям, перевозкам, внешним контактам и всему такому</p>
+
+                            <div class="socials">
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#viber"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#whatsapp"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#skype"></use>
+                                    </svg>
+                                </a>
+                                <a href="javascript:;" class="socials__item">
+                                    <svg>
+                                        <use xlink:href="img/icons/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="info__item phone">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-phone"></use>
+                                </svg>
+                            </div>
+                            
+                            <a href="javascript:;">+372 640 4014</a>
+                        </div>
+
+                        <div class="info__item mail">
+                            <div class="icon">
+                                <svg>
+                                    <use xlink:href="img/icons/sprite.svg#map-mail"></use>
+                                </svg>
+                            </div>
+                            
+                            <a href="javascript:;">info@dkl.ee</a>
+                        </div> -->
+
+                    </div>
+
+                    <div class="content">
+                        <div class="row">
+                            <div class="row__item address">Эстония, Таллин, Kesk-Sojamae 2</div>
+                            <div class="row__item phone"><a href="javascript:;">+372 640 4014</a></div>
+                            <div class="row__item mail"><a href="javascript:;">info@dkl.ee</a></div>
+                        </div>
+                        <!-- <div class="map"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="partners">
+            <div class="wrapper">
+                <div class="block-title">
+                    <h2>Клиенты и партнеры</h2>
+                </div>
+
+                <div class="partners__wrap">
+                    <div class="slider">
+                        <a href="javascript:;" class="slider__item">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="img/partners.png" alt="">
+                                </div>
+                            </div>
+                            <p class="text">
+                                Yang Ming
+                            </p>
+                        </a>
+
+                        <a href="javascript:;" class="slider__item">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="img/partners.png" alt="">
+                                </div>
+                            </div>
+                            <p class="text">
+                                Yang Ming
+                            </p>
+                        </a>
+
+                        <a href="javascript:;" class="slider__item">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="img/partners.png" alt="">
+                                </div>
+                            </div>
+                            <p class="text">
+                                Yang Ming
+                            </p>
+                        </a>
+
+                        <a href="javascript:;" class="slider__item">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="img/partners.png" alt="">
+                                </div>
+                            </div>
+                            <p class="text">
+                                Yang Ming
+                            </p>
+                        </a>
+
+                        <a href="javascript:;" class="slider__item">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="img/partners.png" alt="">
+                                </div>
+                            </div>
+                            <p class="text">
+                                Yang Ming
+                            </p>
+                        </a>
+
+                        <a href="javascript:;" class="slider__item">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="img/partners.png" alt="">
+                                </div>
+                            </div>
+                            
+                            <p class="text">
+                                Yang Ming
+                            </p>
+                        </a>
+
+                        <a href="javascript:;" class="slider__item">
+                            <div class="image-container">
+                                <div class="image">
+                                    <img src="img/partners.png" alt="">
+                                </div>
+                            </div>
+                            <p class="text">
+                                Yang Ming
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pay-info">
+            <div class="wrapper">
+                <div class="block-title">
+                    <h2>Реквизиты</h2>
+                </div>
+
+                <div class="pay-info__wrap">
+                    <div class="pay-info__item">
+                        <div class="name">Юридический адрес</div>
+                        <div class="value">196191, г. Санкт-Петербург, пл. Конституции, д. 7</div>
+                    </div>
+                    <div class="pay-info__item">
+                        <div class="name">Почтовый адрес</div>
+                        <div class="value">196191, г. Санкт-Петербург, пл. Конституции, д. 7</div>
+                    </div>
+                    <div class="pay-info__item">
+                        <div class="name">ОГРН</div>
+                        <div class="value">1089848059366</div>
+                    </div>
+                    <div class="pay-info__item">
+                        <div class="name">ОКПО</div>
+                        <div class="value">89041828</div>
+                    </div>
+                    <div class="pay-info__item">
+                        <div class="name">ОКАТО</div>
+                        <div class="value">40278562000</div>
+                    </div>
+                    <div class="pay-info__item">
+                        <div class="name">ИНН</div>
+                        <div class="value">7842399004</div>
+                    </div>
+                    <div class="pay-info__item">
+                        <div class="name">КПП</div>
+                        <div class="value">780601001</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="docs">
+            <div class="wrapper">
+                <div class="block-title">
+                    <h2>Учредительные документы</h2>
+                </div>
+
+                <div class="docs__wrap">
+                    <a href="javascript:;" class="docs__item">
+                        <div class="image">
+                            <img src="img/license.png" alt="">
+
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#square"></use>
+                            </svg>
+                        </div>
+                        <p class="text">
+                            Лист записи Единого государственного реестра
+                        </p>
+                    </a>
+
+                    <a href="javascript:;" class="docs__item">
+                        <div class="image">
+                            <img src="img/license.png" alt="">
+
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#square"></use>
+                            </svg>
+                        </div>
+                        <p class="text">
+                            Лист записи Единого государственного реестра
+                        </p>
+                    </a>
+
+                    <a href="javascript:;" class="docs__item">
+                        <div class="image">
+                            <img src="img/license.png" alt="">
+
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#square"></use>
+                            </svg>
+                        </div>
+                        <p class="text">
+                            Лист записи Единого государственного реестра
+                        </p>
+                    </a>
+
+                    <a href="javascript:;" class="docs__item">
+                        <div class="image">
+                            <img src="img/license.png" alt="">
+
+                            <svg class="icon">
+                                <use xlink:href="img/icons/sprite.svg#square"></use>
+                            </svg>
+                        </div>
+                        <p class="text">
+                            Лист записи Единого государственного реестра
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="files">
+            <div class="wrapper">
+                <div class="block-title">
+                    <h2>Файлы для скачивания</h2>
+                </div>
+
+                <div class="files__wrap">
+                    <div class="files__item">
+                        <svg class="icon">
+                            <use xlink:href="img/icons/sprite.svg#links3"></use>
+                        </svg>
+
+                        <a href="javascript:;"><span>Договор</span>[dogovor.doc, 32kb]</a>
+                    </div>
+
+                    <div class="files__item">
+                        <svg class="icon">
+                            <use xlink:href="img/icons/sprite.svg#links3"></use>
+                        </svg>
+
+                        <a href="javascript:;"><span>Доверенность</span>[doverennost.doc, 88kb]</a>
+                    </div>
+
+                    <div class="files__item">
+                        <svg class="icon">
+                            <use xlink:href="img/icons/sprite.svg#links3"></use>
+                        </svg>
+
+                        <a href="javascript:;"><span>Накладная</span>[nakladnaya.xls, 55kb]</a>
+                    </div>
                 </div>
             </div>
         </div>
