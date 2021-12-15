@@ -1,20 +1,21 @@
 .license {
-    padding: 33px 0 44px;
+    padding: 33px 0 4px;
     border-bottom: 1px solid #4c5761;
 
     &__wrap {
         display: flex;
+        flex-wrap: wrap;
         margin: 30px -20px 0;
     }
 
     &__item {
-        margin: 0 20px;
+        margin: 0 20px 40px;
         width: calc(25% - 40px);
 
         .image {
             background-image: url('../img/lines-logo.png');
             border: 3px solid #495159;
-            background-size: 101% auto;
+            //background-size: 101% auto;
             background-position: center;
             display: flex;
             justify-content: center;
@@ -38,6 +39,32 @@
             color: @white;
             line-height: 1.6;
             padding: 0 6px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .license {
+        padding: 38px 0 0;
+
+        &__item {
+            width: calc((100% / 3) - 40px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .license {            
+        &__item {
+            width: calc((100% / 2) - 40px);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .license {            
+        &__item {
+            width: calc((100% / 1) - 40px);
         }
     }
 }
