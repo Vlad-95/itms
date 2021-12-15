@@ -1,15 +1,16 @@
 .photos {
-    padding: 33px 0 40px;
+    padding: 33px 0 0;
     border-bottom: 1px solid #4c5761;
 
     &__wrap {
         display: flex;
+        flex-wrap: wrap;
         margin: 31px -20px 0;
     }
 
     &__item {
-        width: calc((100% / 3) - 20px);
-        margin: 0 20px;
+        width: calc((100% / 3) - 40px);
+        margin: 0 20px 40px;
 
         .image {
             height: 230px;
@@ -32,6 +33,32 @@
             span {
                 font-size: 13px;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .photos {
+        padding: 38px 0 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .photos {
+        padding: 38px 0 0;
+
+        &__item {
+            width: calc((100% / 2) - 40px);
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .photos {
+        padding: 38px 0 0;
+
+        &__item {
+            width: calc((100% / 1) - 40px);
         }
     }
 }
