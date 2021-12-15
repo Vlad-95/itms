@@ -20,6 +20,10 @@
             margin: 50px 0 18px;
         }
 
+        a {
+            text-decoration: underline;
+        }
+
         ul,
         ol {
             font-size: 17px;
@@ -94,6 +98,23 @@
             right: 5px;
             top: 5px;
             transform: rotate(180deg);
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .descr {
+        padding: 38px 0;
+         
+        .wysiwyg {
+            p {
+                font-size: 15px;
+            }
+
+            ul,
+            ol {
+                font-size: 15px;
+            }
         }
     }
 }
