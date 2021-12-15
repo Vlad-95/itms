@@ -10,22 +10,24 @@
         &__item {
             margin: 0 20px;
 
-            .image-container {
+            .image {
                 background-image: url('../img/lines-logo.png');
                 // background-size: 101% auto;
                 background-repeat: no-repeat;
                 background-position: center;
                 border: 3px solid #495159;
                 padding: 3px;
+
+                &__inner {
+                    background-color: @white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 19px 23px;
+                }
             }
 
-            .image {
-                background-color: @white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 19px 23px;
-            }
+            
 
             .text {
                 font-size: 13px;
