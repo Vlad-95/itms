@@ -59,6 +59,8 @@ $(document).ready(function() {
             // от 0 (весь мир) до 19.
             zoom: 7
         });
+
+        myMap.behaviors.disable('scrollZoom')
     }
 
     //слайдер отзывов
@@ -93,7 +95,33 @@ $(document).ready(function() {
     if ($('.partners .slider').length) {
         $('.partners .slider').slick({
             slidesToShow: 6,
-            arrows: false
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 5
+                    }
+                },
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 4
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }
+            ]
         })
     }
 

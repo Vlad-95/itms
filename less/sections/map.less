@@ -151,3 +151,42 @@
         }
     }
 }
+
+@media screen and (max-width: 992px) {
+    .map {
+        padding: 38px 0;
+
+        .info {
+            max-width: 320px;
+            padding-right: 40px;
+        }
+        
+        .content {
+            width: calc(100% - 320px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .map {
+        padding: 38px 0;
+
+        &__item {
+            display: block;
+        }
+
+        .info {
+            max-width: 100%;
+            padding-right: 0;
+        }
+        
+        .content {
+            width: 100%;
+            margin-top: 20px;
+
+            .map {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
