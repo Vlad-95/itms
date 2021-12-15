@@ -190,3 +190,25 @@
         }
     }
 }
+
+@media screen and (max-width: 576px) {
+    .map {
+        .content { 
+            .row {
+                display: block;
+
+                &__item {
+                    &:not(:last-of-type) {
+                        padding-right: 0;
+                        margin-right: 0;
+                        margin-bottom: 15px;
+
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
