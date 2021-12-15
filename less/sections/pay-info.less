@@ -28,3 +28,37 @@
         }
     }
 }
+
+@media screen and (max-width: 992px) {
+    .pay-info {
+        &__item {
+            .name {
+                font-size: 15px;                
+            }
+    
+            .value {
+                font-size: 15px;                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pay-info {
+        &__item {
+            display: block;
+
+            .name {
+                font-size: 15px;
+                width: 100%;                
+                padding-right: 0;
+            }
+    
+            .value {
+                font-size: 12px;            
+                width: 100%;    
+                margin-top: 10px;
+            }
+        }
+    }
+}
