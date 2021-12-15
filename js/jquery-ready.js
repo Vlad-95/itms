@@ -89,6 +89,14 @@ $(document).ready(function() {
                 }
             ]
         })
+
+        $('.reviews .arrow__item.prev').on('click', function () {
+            $('.reviews .slider').slick('slickPrev');
+        });
+
+        $('.reviews .arrow__item.next').on('click', function () {
+            $('.reviews .slider').slick('slickNext');
+        })
     }
 
     //слайдер партнеров
@@ -122,6 +130,14 @@ $(document).ready(function() {
                     }
                 }
             ]
+        });
+
+        $('.partners .arrow__item.prev').on('click', function () {
+            $('.partners .slider').slick('slickPrev');
+        });
+
+        $('.partners .arrow__item.next').on('click', function () {
+            $('.partners .slider').slick('slickNext');
         })
     }
 

@@ -5,6 +5,40 @@
     &__wrap {
         //display: flex;
         margin: 30px -20px 0;
+        position: relative;
+    }
+
+    .arrow {
+        &__item {
+            cursor: pointer;
+            position: absolute;
+            top: 35%;
+            background-color: @violet;
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            
+            
+            svg {
+                width: 18px;
+                height: 18px;
+                fill: @white;
+            }
+
+            &.prev {
+                left: 5px;
+                transform: rotate(90deg);
+            }
+
+            &.next {
+                right: 5px;
+                transform: rotate(-90deg);
+            }
+        }
     }
 
     .slider {
