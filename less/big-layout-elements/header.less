@@ -118,6 +118,38 @@
         }
     }
 
+    &_terminal {
+        padding-bottom: 0;
+        border: none;
+    }
+
+    .nav {
+        border-top: 1px solid #4c5761;
+        margin-top: 25px;
+        padding: 21px 0;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;  
+        width: 100%;      
+
+        a {
+            color: @white;
+            transition: 0.3s;
+            font-weight: 500;
+            font-size: 15px;
+
+            &:hover {
+                color: @green;
+            }
+        }
+    }
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -167,6 +199,12 @@
                 }
             }
         }
+
+        .menu {
+            a {
+                font-size: 13px;
+            }
+        }
     }
 }
 
@@ -182,6 +220,15 @@
 
         .burger {
             display: block;
+        }
+
+        &_terminal {
+            padding-bottom: 27px;
+            border-bottom: 1px solid #4c5761;
+        }
+
+        .nav {
+            display: none;
         }
     }
 }
@@ -204,6 +251,12 @@
         }
 
         &_login {
+            .burger {
+                margin-left: auto;
+            }
+        }
+
+        &_terminal {
             .burger {
                 margin-left: auto;
             }

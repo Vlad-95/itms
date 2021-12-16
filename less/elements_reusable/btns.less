@@ -1,0 +1,42 @@
+.btn {
+    color: @white;
+
+    &_border {
+        border: 2px solid @green;
+        border-radius: 100px;
+    }
+
+    &_fill {
+        background-color: @green;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    &_uppercase {
+        text-transform: uppercase;
+    }
+
+    &.choose-line {
+        font-weight: 500;
+        font-size: 15px;
+        padding: 10px 17px;
+    }
+}
+
+@media (max-width: 992px) {
+    .btn {
+        &_fill {
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        &.choose-line {
+            font-size: 12px;
+            padding: 7px 12px;
+        }
+    }
+}

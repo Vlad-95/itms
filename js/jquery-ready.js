@@ -42,26 +42,39 @@ $(document).ready(function() {
     //Маска телефона
     $('input[name="tel"]').mask('+7 (999) 999-99-99');
 
-    //карты
-    
-    // Функция ymaps.ready() будет вызвана, когда
-    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-    ymaps.ready(init);
-    function init(){
-        // Создание карты.
-        var myMap = new ymaps.Map("map", {
-            // Координаты центра карты.
-            // Порядок по умолчанию: «широта, долгота».
-            // Чтобы не определять координаты центра карты вручную,
-            // воспользуйтесь инструментом Определение координат.
-            center: [55.76, 37.64],
-            // Уровень масштабирования. Допустимые значения:
-            // от 0 (весь мир) до 19.
-            zoom: 7
-        });
-
-        myMap.behaviors.disable('scrollZoom')
+    if($('.js-date').length) {
+        $('.js-date').datepicker();
     }
+
+    //карты
+    if($('.map').length) {
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [55.76, 37.64],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 7
+            });
+
+            myMap.behaviors.disable('scrollZoom')
+        }
+    }
+
+    //аккордион
+    if($('.js-accordion-toggle').length) {
+        $('.js-accordion-toggle').click(function() {
+            $(this).toggleClass('active').closest('.js-accordion-item').find('.js-accordion-drop').slideToggle();
+        });
+    }
+    
 
     //слайдер отзывов
     if($('.reviews .slider').length) {
@@ -138,6 +151,25 @@ $(document).ready(function() {
 
         $('.partners .arrow__item.next').on('click', function () {
             $('.partners .slider').slick('slickNext');
+        })
+    }
+
+    //ширина для таблицы
+    if($('.content__table').length) {
+        let changeWidthTable = function () {
+            let table = $('.content__table');
+            let tabelWidth;
+            if ($(window).width() > 768) {
+                tabelWidth = $(window).width() - table.offset().left;                
+            } else {
+                tabelWidth = $(window).width() - (table.offset().left * 2);
+            }
+
+            table.outerWidth(tabelWidth);
+        }
+        changeWidthTable();
+        $(window).resize(function() {
+            changeWidthTable();
         })
     }
 
