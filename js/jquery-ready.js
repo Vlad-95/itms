@@ -235,4 +235,176 @@ $(document).ready(function() {
 
     $('.js-popup-close').click(closeModal);
 
+    //клик по кнопке подробнее на странице Компании
+    if ($('.intro_company').length) {
+        $('.intro_company .toggle').on('click', function() {
+            $('.intro').next('.descr').slideDown();
+        })
+
+        $('.descr .toggle').on('click', function() {
+            $('.intro').next('.descr').slideUp();
+        })
+    }
+
+    //подгрузка лицензций
+    if ($('.license').length) {
+        
+        let showElems = 1;
+
+        if ($(window).width() > 992) {
+            showElems = 4    
+        } else if ($(window).width() > 768) {
+            showElems = 3
+        } else if ($(window).width() > 576) {
+            showElems = 2
+        }
+
+        //Скрывавем элементы
+        $('.license__item').each(function() {
+            let index = $(this).index() + 1;
+            
+            if (index > showElems) {
+                $(this).hide();
+            } else {
+                $(this).attr('data-fancybox', 'license')//подставляем атрибуты fancybox только видимым элементам
+            }
+        });
+
+        $('.license .more span').text($('.license__item[style="display: none;"]').length)
+        if(!$('.license__item[style="display: none;"]').length) {
+            $('.license .more').fadeOut();
+        }
+        
+        //Клик по кнопке
+        $('.license .more').on('click', function() {
+            let visibleElemsCount = $('.license__item').not('[style="display: none;"]').length;
+
+            visibleElemsCount += showElems;
+           
+            $('.license__item[style="display: none;"]').each(function() {
+                let index = $(this).index() + 1;
+
+                if (index > visibleElemsCount) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                    $(this).attr('data-fancybox', 'license')//подставляем атрибуты fancybox только видимым элементам
+                }
+            });
+
+            $('.license .more span').text($('.license__item[style="display: none;"]').length);
+
+            if(!$('.license__item[style="display: none;"]').length) {
+                $('.license .more').fadeOut();
+            }
+        })
+    }
+
+    //подгрузка фото
+    if ($('.photos').length) {
+        
+        let showElems = 1;
+
+        if ($(window).width() > 992) {
+            showElems = 3    
+        } else if ($(window).width() > 768) {
+            showElems = 3
+        } else if ($(window).width() > 576) {
+            showElems = 2
+        }
+
+        //Скрывавем элементы
+        $('.photos__item').each(function() {
+            let index = $(this).index() + 1;
+            
+            if (index > showElems) {
+                $(this).hide();
+            } else {
+                //$(this).attr('data-fancybox', 'gallery')//подставляем атрибуты fancybox только видимым элементам
+            }
+        });
+
+        $('.photos .more span').text($('.photos__item[style="display: none;"]').length)
+        if(!$('.photos__item[style="display: none;"]').length) {
+            $('.photos .more').fadeOut();
+        }
+        
+        //Клик по кнопке
+        $('.photos .more').on('click', function() {
+            let visibleElemsCount = $('.photos__item').not('[style="display: none;"]').length;
+
+            visibleElemsCount += showElems;
+           
+            $('.photos__item[style="display: none;"]').each(function() {
+                let index = $(this).index() + 1;
+
+                if (index > visibleElemsCount) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                    //$(this).attr('data-fancybox', 'gallery')//подставляем атрибуты fancybox только видимым элементам
+                }
+            });
+
+            $('.photos .more span').text($('.photos__item[style="display: none;"]').length);
+
+            if(!$('.photos__item[style="display: none;"]').length) {
+                $('.photos .more').fadeOut();
+            }
+        })
+    }
+
+    //подгрузка документов
+    if ($('.docs').length) {
+        
+        let showElems = 1;
+
+        if ($(window).width() > 992) {
+            showElems = 4    
+        } else if ($(window).width() > 768) {
+            showElems = 3
+        } else if ($(window).width() > 576) {
+            showElems = 2
+        }
+
+        //Скрывавем элементы
+        $('.docs__item').each(function() {
+            let index = $(this).index() + 1;
+            
+            if (index > showElems) {
+                $(this).hide();
+            } else {
+                $(this).attr('data-fancybox', 'docs')//подставляем атрибуты fancybox только видимым элементам
+            }
+        });
+
+        $('.docs .more span').text($('.docs__item[style="display: none;"]').length)
+        if(!$('.docs__item[style="display: none;"]').length) {
+            $('.docs .more').fadeOut();
+        }
+        
+        //Клик по кнопке
+        $('.docs .more').on('click', function() {
+            let visibleElemsCount = $('.docs__item').not('[style="display: none;"]').length;
+
+            visibleElemsCount += showElems;
+           
+            $('.docs__item[style="display: none;"]').each(function() {
+                let index = $(this).index() + 1;
+
+                if (index > visibleElemsCount) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                    $(this).attr('data-fancybox', 'docs')//подставляем атрибуты fancybox только видимым элементам
+                }
+            });
+
+            $('.docs .more span').text($('.docs__item[style="display: none;"]').length);
+
+            if(!$('.docs__item[style="display: none;"]').length) {
+                $('.docs .more').fadeOut();
+            }
+        })
+    }
 });
