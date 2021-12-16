@@ -105,6 +105,7 @@ $(document).ready(function() {
         $('.reviews .slider').slick({
             slidesToShow: 4,
             arrows: false,
+            infinite: false,
             responsive: [
                 {
                     breakpoint: 992,
@@ -126,6 +127,10 @@ $(document).ready(function() {
                 }
             ]
         })
+
+        if(!$('.reviews .slider .slider__item').not('.slick-active').length) {
+            $('.reviews .arrow').hide();
+        }
 
         $('.reviews .arrow__item.prev').on('click', function () {
             $('.reviews .slider').slick('slickPrev');
