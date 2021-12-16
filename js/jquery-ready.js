@@ -1,17 +1,95 @@
 $(document).ready(function() {
-    //мобильное меню
-    let body = $('body');
-    let burger = $('.burger');
 
-    function showMenu() {
+    //Мобильное меню
+    if (window.innerWidth <= 992) {
         let mobileMenu = $('.mobile-menu');
+        let mobileMenuWrap = mobileMenu.find('.mobile-menu__wrap')
+        let header = $('.header');
 
-        burger.toggleClass('active');
-        body.toggleClass('no-scroll');
-        mobileMenu.toggleClass('active');
+        if (header.hasClass('header_terminal')) {
+            let userInfo = $('.header .info');
+            let icons = $('.header .icons');
+            let menu = $('.header .menu');
+
+            userInfo.detach().appendTo(mobileMenuWrap);
+            menu.detach().appendTo(mobileMenuWrap);
+            icons.clone().appendTo(mobileMenuWrap);
+
+        } else if (header.hasClass('header_login')) {
+            let userInfo = $('.header .info');
+            let icons = $('.header .icons');
+
+            userInfo.detach().appendTo(mobileMenuWrap);
+            icons.clone().appendTo(mobileMenuWrap);
+
+        } else {
+            let loginForm = $('.header .login');
+            let headerFeedback = $('.header .header__feedback');
+
+            loginForm.detach().appendTo(mobileMenuWrap);
+            headerFeedback.clone().appendTo(mobileMenuWrap);
+        }
+
+
+        // let desktopMenu = $('.header__menu');
+        // let headerContacts = $('.header__wrap .header__contacts');
+        // let mobileMenuClose = document.createElement('div');
+        // let mobileMenu = document.createElement('div');
+        // let mobileMenuContent = document.createElement('div');
+        
+        // $(mobileMenu).addClass('mobile-menu').appendTo('.header__wrap');
+        // $(mobileMenuContent).addClass('mobile-menu__content').appendTo('.mobile-menu');
+        // $(mobileMenuClose).addClass('mobile-menu__close').appendTo('.mobile-menu__content');
+        // desktopMenu.detach().appendTo('.mobile-menu__content');
+        // headerContacts.detach().appendTo('.mobile-menu__content');
+
+        //Открытие/закрытие мобильного меню
+        $('.burger').on('click', function() {
+            if ($(this).hasClass('active')) {
+                $('.burger').removeClass('active');
+                $('body').removeClass('opacity-layer no-scroll');
+                mobileMenu.hide("slide", { direction: "right" }, 500);
+            } else {
+                $('.burger').addClass('active');
+                $('body').addClass('opacity-layer no-scroll');
+                mobileMenu.show("slide", { direction: "right" }, 500);
+            }
+            
+        });
+
+        // $('.burger.active').on('click', function() {
+        //     console.log(1);
+        //     
+        // });
+        
     }
 
-    burger.click(showMenu);
+    
+
+    // function showMenu() {
+    //     let mobileMenu = $('.mobile-menu');
+
+    //     burger.toggleClass('active');
+    //     body.toggleClass('no-scroll');
+    //     mobileMenu.toggleClass('active');
+    // }
+
+    // burger.click(showMenu);
+
+    //============Мобильное меню (КОНЕЦ)
+    // //мобильное меню
+    // let body = $('body');
+    // let burger = $('.burger');
+
+    // function showMenu() {
+    //     let mobileMenu = $('.mobile-menu');
+
+    //     burger.toggleClass('active');
+    //     body.toggleClass('no-scroll');
+    //     mobileMenu.toggleClass('active');
+    // }
+
+    // burger.click(showMenu);
 
     
     //одинаковая высота блоков
