@@ -70,6 +70,23 @@ $(document).ready(function() {
         $('.js-date').datepicker();
     }
 
+    //обрезка текста
+    function truncate(str, maxlength) {
+        return (str.length > maxlength) ? str.slice(0, maxlength - 1) + '…' : str;
+    }
+
+    if ($('.intro_dash').length) {
+        $('.slider .slide').each(function () {
+            let text = $(this).find('.content p').html(); 
+            let truncacteText = truncate(text, 300);
+
+            //подменяем текст
+            $(this).find('.content p').html(truncacteText)
+
+        })
+    }
+    
+
     //карты
     if($('.map').length) {
         
