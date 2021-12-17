@@ -10,6 +10,24 @@
         &:last-of-type {
             border-bottom: none;
         }
+
+        &.active {
+            .content {
+                .row {
+                    display: none;
+                }
+
+                .map {
+                    display: block;
+                }
+            }
+
+            .info {
+                &__item {
+                    display: block!important;
+                }
+            }
+        }
     }
 
     .info {
@@ -22,8 +40,14 @@
             position: relative;
             padding-left: 40px;
 
-            &:not(:last-of-type) {
-                margin-bottom: 30px;
+            
+            
+            &:nth-of-type(n + 2) {
+                margin-top: 30px;
+            }
+
+            &:not(.address) {
+                display: none;
             }
 
             .icon {
@@ -54,6 +78,8 @@
             }
 
             &.address {
+                cursor: pointer;
+
                 p {
                     font-weight: 500;
                 }
@@ -148,6 +174,7 @@
             max-height: 370px;
             margin-bottom: 27px;
             background: none;
+            display: none;
         }
     }
 }

@@ -72,24 +72,34 @@ $(document).ready(function() {
 
     //карты
     if($('.map').length) {
-        // Функция ymaps.ready() будет вызвана, когда
-        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-        ymaps.ready(init);
-        function init(){
-            // Создание карты.
-            var myMap = new ymaps.Map("map", {
-                // Координаты центра карты.
-                // Порядок по умолчанию: «широта, долгота».
-                // Чтобы не определять координаты центра карты вручную,
-                // воспользуйтесь инструментом Определение координат.
-                center: [55.76, 37.64],
-                // Уровень масштабирования. Допустимые значения:
-                // от 0 (весь мир) до 19.
-                zoom: 7
-            });
+        
+        $('.map__item').each(function() {
+            let map = $(this).find('.map');
+            let itemIndex = $(this).index();
+            let coordX = map.attr('data-x');
+            let coordY = map.attr('data-y');
 
-            myMap.behaviors.disable('scrollZoom')
-        }
+            map.attr('id', 'map' + itemIndex);
+            let id = map.attr('id')
+
+            ymaps.ready(init);
+            function init(){
+            
+                var myMap = new ymaps.Map(id, {
+                    center: [coordX, coordY],
+                    zoom: 7
+                });
+
+                myMap.behaviors.disable('scrollZoom')
+            }
+            
+        })
+        
+
+        //открытие блоков с картами
+        $('.map__item .info__item.address').on('click', function () {
+            $(this).closest('.map__item').addClass('active').siblings().removeClass('active');
+        });
     }
 
     //аккордион
